@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Al-Hossam Law Firm</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap">
+<style>
+/* Layout: mobile-first single column, stacked bands, sticky header, floating WhatsApp button */
+:root{
+  --ink:#0f1a2b; --ink2:#18263d; --gold:#b8924a; --gold2:#d9bb7c;
+  --paper:#f6f4ef; --card:#ffffff; --fg:#1c2433; --muted:#5d6676; --line:#e3ddd0;
+  --display:"Reem Kufi","Cormorant Garamond",Georgia,serif;
+  --body:"IBM Plex Sans Arabic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#0c1422;--card:#132036;--fg:#ece7dc;--muted:#a7afbd;--line:#25344d;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0c1422;--card:#132036;--fg:#ece7dc;--muted:#a7afbd;--line:#25344d;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.75}
+html[lang="en"] body{--display:"Cormorant Garamond",Georgia,serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.3}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:4px;font-weight:600;text-decoration:none;border:1px solid var(--gold);cursor:pointer;font:inherit;font-weight:600}
+.btn-gold{background:var(--gold);color:#101826}
+.btn-ghost{background:transparent;color:#f3ead7}
+.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#f3ead7;border-bottom:1px solid #2a3a55}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-family:var(--display);font-size:1.05rem;display:block;line-height:1.2}
+.brand small{color:var(--gold2);font-size:.72rem;letter-spacing:.04em}
+.lang{background:none;border:1px solid #3b4d6c;color:#f3ead7;padding:6px 12px;border-radius:4px;font:inherit;font-size:.85rem;cursor:pointer}
+
+.hero{background:radial-gradient(120% 90% at 80% 0%,#22365a 0%,var(--ink) 60%);color:#f3ead7;position:relative;overflow:hidden}
+.hero .wrap{padding-block:56px 64px;display:grid;gap:22px;position:relative}
+.hero::after{content:"";position:absolute;inset:auto -60px -80px auto;width:320px;height:320px;border:1px solid rgba(217,187,124,.18);border-radius:50%}
+.eyebrow{color:var(--gold2);font-size:.82rem;letter-spacing:.08em;font-weight:600}
+.hero h1{font-size:clamp(2rem,6.5vw,3.4rem);max-width:18ch}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{max-width:52ch;color:#cfd5df;margin:0}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.85rem;color:#b9c1cf}
+.trust span::before{content:"✓ ";color:var(--gold2)}
+
+section{padding-block:64px}
+.head{display:grid;gap:8px;margin-bottom:28px;max-width:60ch}
+.head h2{font-size:clamp(1.6rem,4.5vw,2.3rem)}
+.head p{color:var(--muted);margin:0}
+.rule{width:48px;height:2px;background:var(--gold)}
+
+.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.area{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:8px;align-content:start}
+.area svg{width:34px;height:34px;color:var(--gold)}
+.area h3{font-size:1.15rem}
+.area p{margin:0;color:var(--muted);font-size:.93rem}
+
+.stats{background:var(--ink);color:#f3ead7}
+.stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;text-align:center}
+.stat b{font-family:"Cormorant Garamond",serif;font-size:2.6rem;color:var(--gold2);display:block;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:.9rem;color:#c3cad6}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{border-top:2px solid var(--gold);padding-top:14px}
+.step::before{counter-increment:s;content:counter(s);font-family:"Cormorant Garamond",serif;font-size:1.8rem;color:var(--gold)}
+.step h3{font-size:1.1rem}
+.step p{margin:4px 0 0;color:var(--muted);font-size:.93rem}
+
+.book{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+form{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:14px}
+label{font-size:.85rem;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--fg);width:100%}
+textarea{min-height:90px;resize:vertical}
+.contact{display:grid;gap:14px}
+.contact div{display:grid;gap:2px}
+.contact small{color:var(--muted)}
+.contact b{direction:ltr;unicode-bidi:isolate}
+.note{font-size:.82rem;color:var(--muted);margin:0}
+
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:8px 0 0}
+
+footer{background:var(--ink);color:#b9c1cf;font-size:.85rem}
+footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+.sdg{display:inline-flex;align-items:center;gap:8px}
+.sdg i{background:#00689d;color:#fff;font-style:normal;font-weight:700;font-size:.75rem;padding:3px 7px;border-radius:3px}
+.credit a{color:var(--gold2);text-decoration:none}
+
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-right,0px));width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:30}
+.fab svg{width:28px;height:28px;fill:#fff}
+@media (prefers-reduced-motion:no-preference){.hero h1,.hero p,.hero .ctas{animation:rise .7s ease both}.hero p{animation-delay:.1s}.hero .ctas{animation-delay:.2s}}
+@keyframes rise{from{transform:translateY(12px);opacity:.4}to{transform:none;opacity:1}}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="3" fill="none" stroke="#b8924a"/><path d="M20 9v20M12 13h16M12 13l-4 8h8zM28 13l-4 8h8zM14 31h12" stroke="#d9bb7c" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      <span><b data-t="name"></b><small data-t="tag"></small></span>
+    </a>
+    <button class="lang" id="lang" type="button">English</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow" data-t="eyebrow"></div>
+      <h1 data-t="h1"></h1>
+      <p data-t="lead"></p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#book" data-t="cta1"></a>
+        <a class="btn btn-ghost wa" href="#" target="_blank" rel="noopener" data-t="cta2"></a>
+      </div>
+      <div class="trust"><span data-t="t1"></span><span data-t="t2"></span><span data-t="t3"></span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><div class="rule"></div><h2 data-t="areasH"></h2><p data-t="areasP"></p></div>
+      <div class="areas" id="areas"></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap grid">
+      <div class="stat"><b>+20</b><span data-t="s1"></span></div>
+      <div class="stat"><b>+1,500</b><span data-t="s2"></span></div>
+      <div class="stat"><b>24h</b><span data-t="s3"></span></div>
+      <div class="stat"><b>6</b><span data-t="s4"></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><div class="rule"></div><h2 data-t="stepsH"></h2></div>
+      <div class="steps">
+        <div class="step"><h3 data-t="st1"></h3><p data-t="st1p"></p></div>
+        <div class="step"><h3 data-t="st2"></h3><p data-t="st2p"></p></div>
+        <div class="step"><h3 data-t="st3"></h3><p data-t="st3p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" style="background:var(--card);border-block:1px solid var(--line)">
+    <div class="wrap book">
+      <div class="contact">
+        <div class="head" style="margin:0"><div class="rule"></div><h2 data-t="bookH"></h2><p data-t="bookP"></p></div>
+        <div><small data-t="phoneL"></small><b>+20 10 2310 7902</b></div>
+        <div><small data-t="hoursL"></small><span data-t="hours"></span></div>
+        <div><small data-t="addrL"></small><span data-t="addr"></span></div>
+      </div>
+      <form id="f">
+        <label><span data-t="fName"></span><input id="n" required></label>
+        <label><span data-t="fPhone"></span><input id="p" type="tel" required dir="ltr"></label>
+        <label><span data-t="fArea"></span><select id="a"></select></label>
+        <label><span data-t="fMsg"></span><textarea id="m"></textarea></label>
+        <button class="btn btn-gold" type="submit" data-t="send"></button>
+        <p class="note" data-t="note"></p>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="max-width:760px">
+      <div class="head"><div class="rule"></div><h2 data-t="faqH"></h2></div>
+      <div id="faq"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 <span data-t="name"></span></span>
+    <span class="sdg"><i>SDG 16</i><span data-t="sdg"></span></span>
+    <span class="credit"><span data-t="by"></span> <a href="#top">innervision</a></span>
+  </div>
+</footer>
+
+<a class="fab wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5z"/></svg></a>
+
+<script>
+const WA="201023107902";
+const I={
+ar:{name:"مؤسسة الحسام للمحاماة",tag:"والاستشارات القانونية",eyebrow:"محاماة واستشارات قانونية في مصر",
+h1:"حقك له <em>من يدافع عنه</em> بخبرة وأمانة",lead:"فريق من المحامين المقيدين بنقابة المحامين المصرية، نتابع قضيتك من أول استشارة حتى صدور الحكم، ونشرح لك كل خطوة بوضوح.",
+cta1:"احجز استشارة",cta2:"راسلنا على واتساب",t1:"سرية تامة",t2:"متابعة دورية للقضية",t3:"أتعاب واضحة من البداية",
+areasH:"مجالات عملنا",areasP:"نغطي أغلب احتياجاتك القانونية تحت سقف واحد.",
+s1:"عامًا من الخبرة",s2:"قضية واستشارة",s3:"رد على طلبك",s4:"مجالات تخصص",
+stepsH:"كيف نبدأ معك",st1:"احجز موعدك",st1p:"اختر نوع القضية وأرسل الطلب، يصلنا مباشرة على واتساب.",st2:"جلسة استشارة",st2p:"نسمع منك ونراجع المستندات ونوضح موقفك القانوني.",st3:"خطة ومتابعة",st3p:"نتفق على الأتعاب ونبدأ العمل مع تحديثات منتظمة.",
+bookH:"احجز استشارتك الآن",bookP:"املأ البيانات وسيفتح واتساب برسالة جاهزة لمكتبنا.",phoneL:"الهاتف وواتساب",hoursL:"مواعيد العمل",hours:"السبت إلى الخميس، 10 ص حتى 8 م",addrL:"العنوان",addr:"القاهرة، جمهورية مصر العربية",
+fName:"الاسم",fPhone:"رقم الهاتف",fArea:"نوع القضية",fMsg:"نبذة مختصرة (اختياري)",send:"إرسال عبر واتساب",note:"بياناتك تُعامل بسرية تامة.",
+faqH:"أسئلة شائعة",sdg:"السلام والعدل والمؤسسات القوية",by:"تصميم",
+areas:[["قضايا الأسرة","طلاق، نفقة، حضانة، رؤية، وتوثيق عقود الزواج."],["القضايا الجنائية","الدفاع في الجنح والجنايات والتظلمات والطعون."],["القضايا المدنية","العقود، التعويضات، ومنازعات الملكية والإيجارات."],["الشركات والتجارة","تأسيس الشركات، صياغة العقود، والتحكيم التجاري."],["العقارات","فحص المستندات، التسجيل، وصحة التوقيع ونفاذ العقود."],["قضايا العمل","حقوق العمال، الفصل التعسفي، والتأمينات الاجتماعية."]],
+faq:[["هل الاستشارة الأولى مدفوعة؟","نحدد ذلك حسب نوع القضية، ونخبرك بالتكلفة قبل الموعد بدون مفاجآت."],["هل يمكن الاستشارة أونلاين؟","نعم، نوفر استشارات عبر مكالمة فيديو لمن هم خارج القاهرة أو خارج مصر."],["كم تستغرق القضية؟","تختلف المدة حسب نوع القضية والمحكمة، ونعطيك تقديرًا واقعيًا بعد مراجعة الملف."]]},
+en:{name:"Al-Hossam Law Firm",tag:"Legal Consultancy",eyebrow:"Litigation and legal advice in Egypt",
+h1:"Your rights deserve <em>a strong defence</em>",lead:"Registered Egyptian Bar lawyers who follow your case from the first consultation to the final ruling, and explain every step in plain words.",
+cta1:"Book a consultation",cta2:"Message us on WhatsApp",t1:"Full confidentiality",t2:"Regular case updates",t3:"Clear fees upfront",
+areasH:"Practice areas",areasP:"Most of your legal needs, handled under one roof.",
+s1:"Years of experience",s2:"Cases and consultations",s3:"Response time",s4:"Practice areas",
+stepsH:"How we start",st1:"Book your slot",st1p:"Pick your case type and send. It reaches us directly on WhatsApp.",st2:"Consultation",st2p:"We listen, review your documents and explain where you stand.",st3:"Plan and follow up",st3p:"We agree on fees and get to work, with regular updates.",
+bookH:"Book your consultation",bookP:"Fill in your details and WhatsApp opens with a ready message to our office.",phoneL:"Phone and WhatsApp",hoursL:"Office hours",hours:"Saturday to Thursday, 10 am to 8 pm",addrL:"Address",addr:"Cairo, Egypt",
+fName:"Name",fPhone:"Phone number",fArea:"Case type",fMsg:"Short summary (optional)",send:"Send via WhatsApp",note:"Your details are kept strictly confidential.",
+faqH:"Common questions",sdg:"Peace, Justice and Strong Institutions",by:"Designed by",
+areas:[["Family law","Divorce, alimony, custody, visitation and marriage contracts."],["Criminal defence","Defence in misdemeanours and felonies, appeals and objections."],["Civil cases","Contracts, compensation, property and rental disputes."],["Corporate and commercial","Company setup, contract drafting and commercial arbitration."],["Real estate","Document checks, registration and contract validity cases."],["Labour law","Employee rights, unfair dismissal and social insurance."]],
+faq:[["Is the first consultation paid?","It depends on the case type. We tell you the cost before the meeting, no surprises."],["Can I consult online?","Yes, we offer video consultations for clients outside Cairo or outside Egypt."],["How long does a case take?","It depends on the case and the court. We give a realistic estimate after reviewing your file."]]}};
+const icons=['<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/>','<path d="M4 20h16M7 20V10M17 20V10M3 10l9-6 9 6z"/>','<path d="M12 3v18M5 7h14M5 7l-3 6h6zM19 7l-3 6h6z"/>','<rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V4h8v3"/>','<path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/>','<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'];
+let L="ar";
+function waLink(t){return "https://wa.me/"+WA+(t?"?text="+encodeURIComponent(t):"")}
+function render(){
+  const d=I[L];document.documentElement.lang=L;document.documentElement.dir=L==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-t]").forEach(e=>{const v=d[e.dataset.t];if(v!=null)e.innerHTML=v});
+  document.getElementById("lang").textContent=L==="ar"?"English":"العربية";
+  document.getElementById("areas").innerHTML=d.areas.map((a,i)=>`<div class="area"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">${icons[i]}</svg><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join("");
+  document.getElementById("a").innerHTML=d.areas.map(a=>`<option>${a[0]}</option>`).join("");
+  document.getElementById("faq").innerHTML=d.faq.map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("");
+  document.querySelectorAll(".wa").forEach(a=>a.href=waLink(L==="ar"?"السلام عليكم، أريد حجز استشارة":"Hello, I would like to book a consultation"));
+  document.title=d.name;
+}
+document.getElementById("lang").onclick=()=>{L=L==="ar"?"en":"ar";render()};
+document.getElementById("f").addEventListener("submit",e=>{
+  e.preventDefault();
+  const n=document.getElementById("n").value,p=document.getElementById("p").value,a=document.getElementById("a").value,m=document.getElementById("m").value;
+  const t=L==="ar"?`حجز استشارة\nالاسم: ${n}\nالهاتف: ${p}\nنوع القضية: ${a}\n${m}`:`Consultation request\nName: ${n}\nPhone: ${p}\nCase type: ${a}\n${m}`;
+  const link=document.createElement("a");link.href=waLink(t);link.target="_blank";link.rel="noopener";document.body.appendChild(link);link.click();link.remove();
+});
+render();
+</script>
+
+</html>
