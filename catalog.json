@@ -1,0 +1,488 @@
+{
+  "settings": {
+    "currency": "EGP",
+    "staging": true,
+    "demo": true,
+    "announcement": {
+      "en": "Free delivery across Egypt on orders over EGP 950",
+      "ar": "توصيل مجاني لكل محافظات مصر للطلبات فوق ٩٥٠ ج.م"
+    },
+    "freeDeliveryOver": 950,
+    "codFee": 0,
+    "zones": {
+      "cairo-giza": {
+        "fee": 70,
+        "days": "3-5",
+        "name": {
+          "en": "Cairo & Giza",
+          "ar": "القاهرة والجيزة"
+        }
+      },
+      "delta-alex": {
+        "fee": 85,
+        "days": "4-7",
+        "name": {
+          "en": "Delta & Alexandria",
+          "ar": "الدلتا والإسكندرية"
+        }
+      },
+      "upper-canal": {
+        "fee": 100,
+        "days": "5-8",
+        "name": {
+          "en": "Upper Egypt & Canal",
+          "ar": "صعيد مصر والقنال"
+        }
+      },
+      "sinai-redsea": {
+        "fee": 120,
+        "days": "6-9",
+        "name": {
+          "en": "Sinai & Red Sea",
+          "ar": "سيناء والبحر الأحمر"
+        }
+      }
+    },
+    "promos": {
+      "DRYV10": {
+        "pct": 10
+      }
+    },
+    "whatsapp": "",
+    "email": "",
+    "instagram": "",
+    "tiktok": "",
+    "homeState": "normal",
+    "lowStockThreshold": 3,
+    "analytics": {
+      "ga4": "",
+      "meta": ""
+    }
+  },
+  "products": [
+    {
+      "handle": "core-tank",
+      "type": "Tank Tops",
+      "name": {
+        "en": "Core Training Tank",
+        "ar": ""
+      },
+      "description": {
+        "en": "A fitted training tank built for movement. Clean lines, athletic cut.",
+        "ar": ""
+      },
+      "variants": [
+        {
+          "sku": "DRYV-core-tank-black-S",
+          "colour": "black",
+          "size": "S",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-black-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-black-M",
+          "colour": "black",
+          "size": "M",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-black-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-black-L",
+          "colour": "black",
+          "size": "L",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-black-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-black-XL",
+          "colour": "black",
+          "size": "XL",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-black-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-black-XXL",
+          "colour": "black",
+          "size": "XXL",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-black-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-white-S",
+          "colour": "white",
+          "size": "S",
+          "price": 850,
+          "stock": 2,
+          "image": "assets/img/products/tank-white-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-white-M",
+          "colour": "white",
+          "size": "M",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-white-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-white-L",
+          "colour": "white",
+          "size": "L",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-white-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-white-XL",
+          "colour": "white",
+          "size": "XL",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-white-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-white-XXL",
+          "colour": "white",
+          "size": "XXL",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-white-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-heather-grey-S",
+          "colour": "heather-grey",
+          "size": "S",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-grey-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-heather-grey-M",
+          "colour": "heather-grey",
+          "size": "M",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-grey-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-heather-grey-L",
+          "colour": "heather-grey",
+          "size": "L",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-grey-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-heather-grey-XL",
+          "colour": "heather-grey",
+          "size": "XL",
+          "price": 850,
+          "stock": 10,
+          "image": "assets/img/products/tank-grey-front.webp"
+        },
+        {
+          "sku": "DRYV-core-tank-heather-grey-XXL",
+          "colour": "heather-grey",
+          "size": "XXL",
+          "price": 850,
+          "stock": 0,
+          "image": "assets/img/products/tank-grey-front.webp"
+        }
+      ]
+    },
+    {
+      "handle": "compression-tee",
+      "type": "Compression T-Shirts",
+      "name": {
+        "en": "Fitted Compression Tee",
+        "ar": ""
+      },
+      "description": {
+        "en": "A compression tee designed for performance. Fitted, supportive, breathable.",
+        "ar": ""
+      },
+      "variants": [
+        {
+          "sku": "DRYV-compression-tee-black-S",
+          "colour": "black",
+          "size": "S",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-black-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-black-M",
+          "colour": "black",
+          "size": "M",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-black-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-black-L",
+          "colour": "black",
+          "size": "L",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-black-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-black-XL",
+          "colour": "black",
+          "size": "XL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-black-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-black-XXL",
+          "colour": "black",
+          "size": "XXL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-black-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-white-S",
+          "colour": "white",
+          "size": "S",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-white-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-white-M",
+          "colour": "white",
+          "size": "M",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-white-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-white-L",
+          "colour": "white",
+          "size": "L",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-white-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-white-XL",
+          "colour": "white",
+          "size": "XL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-white-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-white-XXL",
+          "colour": "white",
+          "size": "XXL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-white-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-charcoal-S",
+          "colour": "charcoal",
+          "size": "S",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-charcoal-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-charcoal-M",
+          "colour": "charcoal",
+          "size": "M",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-charcoal-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-charcoal-L",
+          "colour": "charcoal",
+          "size": "L",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-charcoal-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-charcoal-XL",
+          "colour": "charcoal",
+          "size": "XL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-charcoal-front.webp"
+        },
+        {
+          "sku": "DRYV-compression-tee-charcoal-XXL",
+          "colour": "charcoal",
+          "size": "XXL",
+          "price": 1150,
+          "stock": 10,
+          "image": "assets/img/products/tee-charcoal-front.webp"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "handle": "all",
+      "name": {
+        "en": "All Products",
+        "ar": ""
+      },
+      "products": [
+        "core-tank",
+        "compression-tee"
+      ]
+    },
+    {
+      "handle": "new-arrivals",
+      "name": {
+        "en": "New Arrivals",
+        "ar": ""
+      },
+      "products": [
+        "core-tank",
+        "compression-tee"
+      ]
+    },
+    {
+      "handle": "best-sellers",
+      "name": {
+        "en": "Best Sellers",
+        "ar": ""
+      },
+      "products": []
+    },
+    {
+      "handle": "tank-tops",
+      "name": {
+        "en": "Tank Tops",
+        "ar": ""
+      },
+      "products": [
+        "core-tank"
+      ]
+    },
+    {
+      "handle": "compression-t-shirts",
+      "name": {
+        "en": "Compression T-Shirts",
+        "ar": ""
+      },
+      "products": [
+        "compression-tee"
+      ]
+    },
+    {
+      "handle": "upcoming-drops",
+      "name": {
+        "en": "Upcoming Drops",
+        "ar": ""
+      },
+      "products": []
+    }
+  ],
+  "drops": [
+    {
+      "name": "Performance Collection",
+      "state": "pre-drop",
+      "date": null,
+      "homeState": "normal"
+    }
+  ],
+  "policies": {
+    "shipping": {
+      "en": "Draft for owner approval: Free shipping on orders over 950 EGP. Delivery 3-9 business days depending on governorate.",
+      "ar": ""
+    },
+    "returns": {
+      "en": "Draft for owner approval: Size exchanges within 2 days of delivery. Item must be unworn with tags attached. No refunds.",
+      "ar": ""
+    },
+    "privacy": {
+      "en": "Draft for owner approval: We collect only what is needed to process your order and improve your experience. Your data is not sold.",
+      "ar": ""
+    },
+    "terms": {
+      "en": "Draft for owner approval: By using this site you agree to these terms. Prices and availability subject to change.",
+      "ar": ""
+    },
+    "cookie": {
+      "en": "Draft for owner approval: This site uses essential cookies for cart and checkout. No tracking cookies without your consent.",
+      "ar": ""
+    }
+  },
+  "governorates": [
+    "Cairo",
+    "Giza",
+    "Alexandria",
+    "Dakahlia",
+    "Gharbia",
+    "Monufia",
+    "Qalyubia",
+    "Sharqia",
+    "Damietta",
+    "Port Said",
+    "Ismailia",
+    "Suez",
+    "North Sinai",
+    "South Sinai",
+    "Red Sea",
+    "Faiyum",
+    "Beni Suef",
+    "Minya",
+    "Asyut",
+    "Sohag",
+    "Qena",
+    "Luxor",
+    "Aswan",
+    "New Valley",
+    "Matrouh",
+    "Kafr El Sheikh",
+    "Beheira"
+  ],
+  "navigation": {
+    "primary": [
+      "Shop",
+      "New Arrivals",
+      "Collections",
+      "Our Story",
+      "Support"
+    ],
+    "footer": {
+      "shop": [
+        "All Products",
+        "New Arrivals",
+        "Best Sellers",
+        "Tank Tops",
+        "Compression T-Shirts"
+      ],
+      "support": [
+        "Contact",
+        "FAQ",
+        "Size Guide",
+        "Track Order",
+        "Shipping",
+        "Returns & Exchange"
+      ],
+      "company": [
+        "Our Story",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Cookie Notice"
+      ],
+      "connect": [
+        "Instagram",
+        "WhatsApp",
+        "Newsletter"
+      ]
+    }
+  }
+}

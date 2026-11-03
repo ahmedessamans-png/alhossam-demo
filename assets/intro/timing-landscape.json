@@ -1,0 +1,20 @@
+{
+  "orient": "landscape",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "load": [
+    1,
+    60
+  ],
+  "idle": [
+    61,
+    100
+  ],
+  "reveal": [
+    101,
+    140
+  ],
+  "printLitFrame": 45,
+  "blackFromFrame": 136
+}

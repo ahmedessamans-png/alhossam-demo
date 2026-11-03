@@ -1,0 +1,332 @@
+/* intro.css — DRYV Cinematic Fabric Intro Styles */
+/* Stage 1: Zoomed-in fabric macro view — luxury lighting, macro folds, visible weave */
+/* Stage 2: DRYV logo emerges with thunder/earth crack effects */
+/* Total duration: 3 seconds. No loop. No KG counter. No ENTER button. */
+
+/* CSS Custom Properties for brand tokens (fallback if not in styles.css) */
+:root {
+  --color-black: #0B0B0B;
+  --color-carbon: #121212;
+  --color-graphite: #1A1A1A;
+  --color-steel: #2A2A2A;
+  --color-ash: #9A9A9A;
+  --color-fog: #E3E3E3;
+  --color-mist: #F0F0F0;
+  --color-white: #FFFFFF;
+}
+
+/* ==========================================================================
+   GATE OVERLAY
+   ========================================================================== */
+#dryv-intro-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-black);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.dryv-gate-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dryv-gate-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  /* Start zoomed in, will animate to scale(1.0) */
+  will-change: transform;
+}
+
+/* Crack canvas overlay */
+.dryv-crack-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Film grain overlay (CSS-only, on gate) */
+.dryv-gate-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  animation: dryv-grain 8s steps(10) infinite;
+  z-index: 2;
+}
+
+/* Vignette - cinematic darkness at edges */
+.dryv-gate-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 25%, var(--color-black) 100%);
+  opacity: 0.5;
+  z-index: 3;
+}
+
+@keyframes dryv-grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, 10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(10%, -10%); }
+  40% { transform: translate(5%, 15%); }
+  50% { transform: translate(-10%, -5%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 10%); }
+  80% { transform: translate(-5%, -15%); }
+  90% { transform: translate(10%, 5%); }
+}
+
+.dryv-gate-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 24px;
+  will-change: opacity;
+}
+
+/* ==========================================================================
+   BRAND REVEAL — Stage 2 (with thunder/crack effects)
+   ========================================================================== */
+.dryv-brand-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.dryv-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(48px, 10vw, 96px);
+  line-height: 1;
+  color: var(--color-white);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0;
+  will-change: transform, opacity;
+  /* Subtle glow for premium feel */
+  text-shadow: 0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.15);
+}
+
+.dryv-slogan {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.4;
+  color: var(--color-fog);
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+  will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   REDUCED MOTION OVERRIDES
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  #dryv-intro-gate {
+    display: none !important;
+  }
+
+  .dryv-grain {
+    animation: none;
+  }
+
+  .dryv-gate-video {
+    transform: translate(-50%, -50%) scale(1) !important;
+    transition: none !important;
+  }
+
+  .dryv-brand,
+  .dryv-slogan {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .dryv-crack-canvas {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HIGH CONTRAST MODE SUPPORT
+   ========================================================================== */
+@media (forced-colors: active) {
+  .dryv-brand {
+    color: CanvasText;
+  }
+
+  .dryv-slogan {
+    color: GrayText;
+  }
+
+  .dryv-crack-canvas {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   RTL SUPPORT (Arabic)
+   ========================================================================== */
+[dir="rtl"] .dryv-brand-reveal {
+  /* Centered content works for RTL too */
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+@media print {
+  #dryv-intro-gate {
+    display: none !important;
+  }
+}
+
+/* ── 31 Oct 2026 · black-screen fix (Brief Amd v1.1) ─────────────────────────────
+   The gate paints the brand from the first frame (poster), never a black box, and
+   carries a visible, focusable Skip control revealed at 1.2 s. */
+.dryv-gate-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.dryv-gate-video { z-index: 1; }
+.dryv-skip {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10001;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #FFFFFF;
+  font-family: var(--font-ui, Inter, system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out, border-color 200ms ease-out;
+}
+.dryv-skip.is-ready { opacity: 1; pointer-events: auto; }
+/* Pure-CSS reveal at 1.2 s: the JS timer proved unreliable under throttling, and an
+   inaccessible skip control is worse than none. pointer-events stays auto so it is
+   clickable the whole time; only the opacity is delayed. */
+.dryv-skip { animation: dryvSkipIn 240ms ease-out 1200ms forwards; pointer-events: auto; }
+@keyframes dryvSkipIn { from { opacity: 0; } to { opacity: 1; } }
+.dryv-skip:hover, .dryv-skip:focus-visible {
+  border-color: #FFFFFF;
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dryv-skip { transition: none; }
+}
+
+/* ── pull-through hand-off (2026-11-01): the film dives into the D, an aperture opens from its centre ── */
+@property --dryv-ap { syntax: '<length>'; inherits: false; initial-value: 0px; }
+#dryv-intro-gate.is-pulling {
+  --dryv-ap: 0px;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--dryv-ap), #000 calc(var(--dryv-ap) + 1.5px));
+          mask-image: radial-gradient(circle at 50% 50%, transparent var(--dryv-ap), #000 calc(var(--dryv-ap) + 1.5px));
+  transition: --dryv-ap 1150ms cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+}
+#dryv-intro-gate.is-pulling.is-open { --dryv-ap: 150vmax; }
+#dryv-intro-gate.is-pulling .dryv-gate-bg,
+#dryv-intro-gate.is-pulling .dryv-gate-content {
+  transition: transform 1150ms cubic-bezier(0.6, 0, 0.2, 1), filter 1150ms ease-in;
+}
+#dryv-intro-gate.is-pulling.is-open .dryv-gate-bg,
+#dryv-intro-gate.is-pulling.is-open .dryv-gate-content { transform: scale(2.6); filter: blur(8px); }
+html.dryv-pulling, html.dryv-pulling body { overflow: hidden; }
+html.dryv-pulling #mainContent { will-change: transform, filter; }
+
+/* Director's cut v26: click to enter, slogan before the unveiling, dust into the site */
+.dryv-enter {
+  position: absolute; left: 50%; bottom: 11vh; transform: translateX(-50%); z-index: 12;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: none; border: 0; color: #fff; cursor: pointer; opacity: 0; transition: opacity 500ms ease;
+  pointer-events: none; padding: 14px 28px;
+}
+#dryv-intro-gate.is-waiting { cursor: pointer; }
+#dryv-intro-gate.is-waiting .dryv-enter { opacity: 1; pointer-events: auto; }
+#dryv-intro-gate.is-playing .dryv-enter { opacity: 0; transition: opacity 180ms ease; }
+.dryv-enter-ring { width: 54px; height: 54px; border-radius: 50%; border: 1px solid rgba(255,255,255,.55); animation: dryvRing 2.2s ease-in-out infinite; }
+.dryv-enter-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: .42em; margin-right: -.42em; }
+.dryv-enter-note { font-family: Inter, system-ui, sans-serif; font-size: 11px; letter-spacing: .08em; color: rgba(255,255,255,.6); }
+@keyframes dryvRing { 0%,100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.14); opacity: 1; } }
+
+/* Film timing: first letter pops at 1.3 s, so the line is fully gone by 1.25 s. */
+.dryv-tagline {
+  position: absolute; left: 50%; top: 18vh; transform: translateX(-50%); z-index: 11; width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; color: #fff; opacity: 0; pointer-events: none;
+}
+#dryv-intro-gate.is-playing .dryv-tagline { animation: dryvTag 1250ms linear forwards; }
+@keyframes dryvTag { 0% { opacity: 0; } 18% { opacity: 1; } 76% { opacity: 1; } 100% { opacity: 0; } }
+.dryv-tag-main { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: clamp(30px, 5.4vw, 72px); letter-spacing: .2em; margin-right: -.2em; }
+.dryv-tag-sub { font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: clamp(11px, 1.2vw, 15px); letter-spacing: .5em; margin-right: -.5em; color: rgba(255,255,255,.72); }
+
+#dryv-intro-gate.is-dust::after {
+  content: ""; position: absolute; inset: -10%; z-index: 9; pointer-events: none;
+  background:
+    radial-gradient(60% 45% at 30% 70%, rgba(150,145,138,.95), transparent 72%),
+    radial-gradient(55% 50% at 72% 62%, rgba(120,116,110,.95), transparent 74%),
+    radial-gradient(90% 70% at 50% 100%, rgba(90,87,83,1), transparent 80%);
+  opacity: 0; animation: dryvDust 1300ms ease-in forwards;
+}
+@keyframes dryvDust { 0% { opacity: 0; transform: scale(1); } 35% { opacity: 1; } 100% { opacity: 0; transform: scale(1.35); } }
+#dryv-intro-gate.is-dust { transition: opacity 800ms ease 420ms; }
+#dryv-intro-gate.is-dust.is-clearing { opacity: 0; }
+@media (max-width: 767px) { .dryv-enter { bottom: 14vh; } .dryv-tagline { top: 15vh; } .dryv-tag-main { letter-spacing: .14em; margin-right: -.14em; } .dryv-tag-sub { letter-spacing: .34em; margin-right: -.34em; } }
+
+@media (max-width:767px) { .dryv-gate-video { object-fit:contain !important; background:#0b0b0b; } }
+
+/* Slogan, final: visible from the first frame of the film, held through the veiled shot, gone just before the tear at 2.25 s */
+.dryv-tagline { top:clamp(84px,17vh,190px); gap:0; }
+.dryv-tag-main { font-family:'Barlow Condensed','Arial Narrow',sans-serif; font-weight:600; font-size:clamp(30px,4.4vw,64px); line-height:1; letter-spacing:.3em; margin-right:-.3em; }
+.dryv-tag-sub { font-family:Inter,system-ui,sans-serif; font-weight:400; font-size:clamp(10px,1vw,13px); line-height:1; letter-spacing:.58em; margin-right:-.58em; margin-top:18px; padding-top:18px; position:relative; color:rgba(255,255,255,.74); }
+.dryv-tag-sub::before { content:''; position:absolute; top:0; left:50%; width:44px; height:1px; margin-left:-22px; background:rgba(255,255,255,.45); }
+#dryv-intro-gate.is-playing .dryv-tagline { animation:dryvTagIn 2200ms linear forwards; }
+#dryv-intro-gate.is-playing .dryv-tag-main { animation:dryvTagTrack 2200ms cubic-bezier(.16,.8,.3,1) forwards; }
+@keyframes dryvTagIn {
+  0% { opacity:0; filter:blur(5px); transform:translateX(-50%); } 14% { opacity:1; filter:blur(0); transform:translateX(-50%); }
+  72% { opacity:1; filter:blur(0); transform:translateX(-50%) translateY(0); }
+  100% { opacity:0; filter:blur(5px); transform:translateX(-50%) translateY(-10px); }
+}
+@keyframes dryvTagTrack { from { letter-spacing:.42em; margin-right:-.42em; } to { letter-spacing:.3em; margin-right:-.3em; } }
+@media (max-width:767px) { .dryv-tagline { top:15vh; } .dryv-tag-main { font-size:clamp(28px,8.6vw,40px); letter-spacing:.2em; margin-right:-.2em; } .dryv-tag-sub { font-size:10px; letter-spacing:.44em; margin-right:-.44em; } }
+@media (prefers-reduced-motion:reduce) { #dryv-intro-gate.is-playing .dryv-tagline, #dryv-intro-gate.is-playing .dryv-tag-main { animation-duration:.01s; } }

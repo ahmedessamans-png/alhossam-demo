@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Only truly indexable URLs belong here. The storefront routes below are served
+  client-side behind a hash, and crawlers discard everything after '#', so listing
+  them would be a sitemap full of duplicates of the homepage.
+
+  ROUTE INVENTORY (needs prerendering before launch):
+    /collections/all
+    /collections/new-arrivals
+    /collections/best-sellers
+    /collections/tank-tops
+    /collections/compression-t-shirts
+    /collections/upcoming-drops
+    /products/core-tank
+    /products/compression-tee
+    /cart
+    /drop/performance-collection
+    /early-access
+    /pages/about
+    /pages/size-guide
+    /pages/contact
+    /pages/faq
+    /pages/track-order
+    /policies/shipping
+    /policies/returns
+    /policies/privacy
+    /policies/terms
+    /policies/cookie
+    /account/login
+    /account/orders
+    /account/addresses
+    /account/profile
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dryv.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+</urlset>
